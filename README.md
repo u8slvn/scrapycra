@@ -4,9 +4,9 @@ Python web scraper for automated timesheet reporting.
 
 ## Installation
 
-##### Install geckodriver:
+### Install geckodriver:
 
-ScraPyCra use selenium as scraper with [geckodriver](https://github.com/mozilla/geckodriver) (FireFox).
+ScraPyCra uses selenium as scraper with [geckodriver](https://github.com/mozilla/geckodriver) (Firefox).
 
 ```bash
 wget https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-linux64.tar.gz
@@ -15,35 +15,46 @@ sudo chmod +x /usr/bin/geckodriver
 rm geckodriver-v0.24.0-linux64.tar.gz
 ```
 
-##### Install wkhtmltopdf:
+### Install wkhtmltopdf:
+
+Allow to convert html to pdf.
 
 ```bash
 sudo apt-get install wkhtmltopdf
 ```
 
-##### Install dependencies:
+### Clone the project:
+
+```bash
+git clone git@github.com:u8slvn/scrapycra.git
+cd scrapycra
+```
+
+### Install dependencies:
 
 ```bash
 pip install -r requierements.txt
 ```
 
-##### Set environment variables:
+### Set environment variables:
+
+**The signature image** must be a **png** file whit **transparent background** and a size of **300x100** pixels.
 
 ```bash
 export SCRAPYCRA_URL=https://timetracking.url
 export SCRAPYCRA_LOGIN=username
 export SCRAPYCRA_PASSWORD=password
-export SCRAPYCRA_SIGNATURE=/home/me/my_signature.png
+export SCRAPYCRA_SIGNATURE=/home/user/my_signature.png
 ```
 
-You can also copy `settings.env.dist` to `settings.env` and use `source`. 
+You can also copy `settings.env.dist` to `settings.env` fill it with your credentials and information and then use `source`. 
 
 ```bash
 cp settings.env.dist settings.env
 source settings.env
 ```
 
-##### Start ScraPyCra:
+## How to run ScraPyCra:
 
 ```bash
 python -m scrapycra --happiness 1 --motivation 4
