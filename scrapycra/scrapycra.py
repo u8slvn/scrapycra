@@ -83,7 +83,7 @@ class ScraPyCra:
     def validate_cra(self):
         logger.info("Validating CRA...")
         my_cra = self._browser.find_element_by_xpath(
-            '// a[contains(text(), "Mon CRA")]'
+            '//a[contains(text(), "Mon CRA")]'
         )
         my_cra_url = my_cra.get_attribute('href')
         self._browser.get(my_cra_url)
@@ -122,7 +122,7 @@ class ScraPyCra:
     def generate_cra(self):
         logger.info("Generating CRA...")
         my_cra = self._browser.find_element_by_xpath(
-            '// a[contains(text(), "Mon CRA")]'
+            '//a[contains(text(), "Mon CRA")]'
         )
         my_cra_url = my_cra.get_attribute('href')
         self._browser.get(my_cra_url)
