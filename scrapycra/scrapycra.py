@@ -1,5 +1,6 @@
 import os
 import sys
+import tempfile
 import time
 from collections import namedtuple
 
@@ -11,6 +12,8 @@ from selenium.webdriver.firefox.options import Options
 log_format = '<green>{time:HH:mm:ss}</green> | <level>{message}</level>'
 logger.remove()
 logger.add(sys.stdout, format=log_format, level='INFO')
+
+tmp_dir = tempfile.gettempdir()
 
 CraWeather = namedtuple('CraWeather', 'happiness, motivation')
 
@@ -27,8 +30,7 @@ weather_label = {
 
 
 class ScraPyCra:
-    # TODO: allow path configuration.
-    cra_path = '/tmp/cra.pdf'
+    cra_path = os.path.join(tmp_dir, 'cra.pdf')
 
     def __init__(self, cra_weather: CraWeather, headless: bool = False):
         self.cra_weather = cra_weather
