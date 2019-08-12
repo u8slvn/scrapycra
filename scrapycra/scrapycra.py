@@ -129,8 +129,8 @@ class ScraPyCra:
         my_cra_url = my_cra.get_attribute('href')
         self._browser.get(my_cra_url)
 
-        cra_list = self._browser.find_elements_by_link_text('Consulter')
-        last_cra = cra_list.pop(0)
+        cra_list = self._browser.find_elements_by_link_text('Modifier')
+        last_cra = cra_list.pop()
         last_cra.click()
 
         mission = self._browser.find_element_by_xpath(
